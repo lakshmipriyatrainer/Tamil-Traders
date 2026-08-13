@@ -543,27 +543,20 @@ font-size:20px;
     background:transparent !important;
     mix-blend-mode:multiply;
 }
+}.hero h1 {
+    font-size:34px;
 }
 
-.hero h1{
-
-font-size:34px;
-
+.section-title {
+    font-size:34px;
 }
-
-.section-title{
-
-font-size:34px;
-
-}
-
 .logo img{
 
 height:60px;
 
 }
 
-}
+
 .about{
     grid-template-columns:1fr;
 }
