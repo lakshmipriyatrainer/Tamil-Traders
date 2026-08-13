@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Tamil Traders - Fresh Green Leaf and Vegetable Wholesale Supplier in Chennai.">
+<title>Tamil Traders | Fresh Green Leaf & Vegetable Wholesale Supplier Chennai</title>
+<style>
+:root{--navy:#01011A;--mid:#021F50;--blue:#05338A;--gold:#E0A41A;--gold2:#FFD86B;--light:#F7F8FA}
+*{box-sizing:border-box;scroll-behavior:smooth}body{margin:0;font-family:"Times New Roman",serif;color:#222;background:var(--light);line-height:1.6}a{text-decoration:none}.container{width:90%;max-width:1180px;margin:auto}
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:linear-gradient(
+        90deg,
+        #7A4A00 0%,
+        #C88A08 20%,
+        #FFD86B 50%,
+        #C88A08 80%,
+        #7A4A00 100%
+    );
+
+    border-bottom:3px solid #7A4A00;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
+}
+.nav{min-height:92px;display:flex;align-items:center;justify-content:space-between}.logo img{height:72px;width:auto}nav{display:flex;gap:28px}nav a{color:var(--blue);font-size:18px;font-weight:bold}nav a:hover{color:var(--gold)}.menu{display:none;background:var(--blue);color:#fff;border:0;padding:8px 12px;font-size:22px}
+.hero{min-height:650px;display:flex;align-items:center;text-align:center;color:#fff;background:linear-gradient(135deg,#01011Aee,#05338Acc),url("images/hero.jpg") center/cover}.hero-content{max-width:900px;margin:auto;padding:80px 0}.badge{display:inline-block;border:1px solid var(--gold2);color:var(--gold2);padding:7px 18px;border-radius:30px}.hero h1{font-size:clamp(40px,6vw,68px);line-height:1.1;margin:22px 0}.hero h1 span{color:var(--gold2)}.hero p{font-size:21px}.btn{display:inline-block;margin:10px;padding:13px 30px;border-radius:30px;font-weight:bold}.primary{background:linear-gradient(90deg,var(--gold),var(--gold2));color:var(--navy)}.secondary{border:1px solid #fff;color:#fff}
+section{padding:80px 0}.heading{text-align:center;max-width:800px;margin:0 auto 45px}.heading h2{font-size:44px;color:var(--blue);margin:0 0 12px}.heading p{font-size:19px;color:#666}
+.about{
+    display:grid;
+    grid-template-columns:48% 52%;
+    gap:40px;
+    align-items:center;
+}
+
+.about-img{
+    width:100%;
+    height:400px;
+    border-radius:20px;
+    overflow:hidden;
+    background:#fff;
+    box-shadow:0 15px 40px #0002;
+}
+
+.about-img img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center;
+    display:block;
+}
+
+.about h2{
+    font-size:42px;
+    color:var(--blue);
+}
+
+.about p{
+    font-size:19px;
+    color:#555;
+}
+
+.checks{
+    list-style:none;
+    padding:0;
+}
+
+.checks li{
+    font-size:18px;
+    margin:9px 0;
+}
+
+.checks li:before{
+    content:"✓";
+    color:var(--gold);
+    font-weight:bold;
+    margin-right:10px;
+}
+.white{background:#fff}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.card{background:#fff;border:1px solid #e5e7eb;border-radius:15px;padding:25px;text-align:center;box-shadow:0 5px 18px #0000000d;transition:.3s}.card:hover{transform:translateY(-7px);border-color:var(--gold)}.icon{font-size:32px;margin-bottom:10px}.card h3{color:var(--blue);font-size:21px}
+.stats{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}.stat strong{display:block;color:var(--gold2);font-size:45px}.stat span{font-size:18px}
+.industries{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.industry{background:#fff;border:1px solid #ddd;border-radius:10px;padding:20px;text-align:center;color:var(--blue);font-weight:bold}.industry:hover{background:var(--blue);color:#fff}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:35px}.box{background:#fff;padding:35px;border-radius:18px;border:1px solid #ddd}.box h3{color:var(--blue);font-size:28px}input,textarea,select{width:100%;padding:13px;margin:6px 0;border:1px solid #ccc;border-radius:7px;font-family:inherit;font-size:16px}textarea{height:120px}.submit{width:100%;padding:13px;border:0;border-radius:25px;background:linear-gradient(90deg,var(--gold),var(--gold2));font: bold 18px "Times New Roman";cursor:pointer}
+footer{background:#F2F2F2;border-top:4px solid var(--gold);padding:50px 0 20px}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px}.footer-logo{height:70px}.footer-grid h3{color:var(--blue)}footer a{display:block;color:#555;margin:7px 0}.bottom{text-align:center;border-top:1px solid #ddd;margin-top:35px;padding-top:18px;color:#666}
+.float{position:fixed;right:18px;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:23px;z-index:999;box-shadow:0 6px 18px #0003}.wa{bottom:78px;background:#159447}.call{bottom:16px;background:var(--blue)}
+@media(max-width:900px){nav{display:none}.menu{display:block}.grid,.industries{grid-template-columns:repeat(2,1fr)}.about,.contact{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.logo img{height:58px}.hero{min-height:600px}.hero h1{font-size:38px}.heading h2{font-size:34px}.grid,.industries,.stats-grid,.footer-grid{grid-template-columns:1fr}section{padding:60px 0}}
+</style>
+</head>
+<body>
+<header><div class="container nav">
+<a class="logo" href="#home">
+    <img id="tamilLogo" src="logo.webp" alt="Tamil Traders Logo">
+</a>
+<button class="menu" onclick="document.querySelector('nav').classList.toggle('show')">☰</button>
+<nav><a href="#home">Home</a><a href="#about">About</a><a href="#products">Products</a><a href="#why">Why Us</a><a href="#industries">Industries</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<main>
+<section class="hero" id="home"><div class="container hero-content">
+<div class="badge">Trusted Wholesale Supplier • Maduravoyal, Chennai</div>
+<h1>Fresh <span>Green Leaf</span> & Vegetable Wholesale Supplier in Chennai</h1>
+<p>Delivering farm-fresh vegetables and premium green leaves to hotels, restaurants, caterers, supermarkets, corporate kitchens and wholesale buyers.</p>
+<a class="btn primary" href="#contact">Get a Quote</a><a class="btn secondary" href="#products">View Products</a>
+</div></section>
+
+<section id="about">
+    <div class="container about">
+
+        <div class="about-img">
+            <img src="image_1.webp" alt="Fresh Green Leaves and Vegetables - Tamil Traders">
+        </div>
+
+        <div>
+            <h2>About Tamil Traders</h2>
+
+            <p>Welcome to <strong>Tamil Traders</strong>, your trusted partner for fresh green leaves and vegetables.</p>
+
+            <p>Based in <strong>Maduravoyal, Chennai</strong>, we supply fresh agricultural produce to businesses across Chennai and nearby districts.</p>
+
+            <p>Our goal is to build long-term relationships through honesty, quality and dependable service.</p>
+
+            <ul class="checks">
+                <li>Farm-fresh procurement</li>
+                <li>Premium quality selection</li>
+                <li>Competitive wholesale pricing</li>
+                <li>Bulk order supply</li>
+                <li>Reliable service</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<section class="white" id="products"><div class="container"><div class="heading"><h2>Our Products</h2><p>Fresh green leaves and vegetables for business requirements.</p></div>
+<div class="grid">
+<div class="card"><div class="icon">🌿</div><h3>Spinach</h3><p>Fresh green spinach for wholesale supply.</p></div>
+<div class="card"><div class="icon">🌿</div><h3>Amaranthus</h3><p>Arai Keerai, Siru Keerai and more.</p></div>
+<div class="card"><div class="icon">🌿</div><h3>Drumstick Leaves</h3><p>Fresh Murungai Keerai.</p></div>
+<div class="card"><div class="icon">🌿</div><h3>Coriander</h3><p>Fresh coriander leaves.</p></div>
+<div class="card"><div class="icon">🌿</div><h3>Mint Leaves</h3><p>Fresh aromatic mint leaves.</p></div>
+<div class="card"><div class="icon">🌿</div><h3>Curry Leaves</h3><p>Fresh curry leaves.</p></div>
+<div class="card"><div class="icon">🥕</div><h3>Carrot</h3><p>Fresh quality carrots.</p></div>
+<div class="card"><div class="icon">🥦</div><h3>Cauliflower</h3><p>Fresh cauliflower in bulk.</p></div>
+<div class="card"><div class="icon">🥬</div><h3>Cabbage</h3><p>Fresh cabbage for businesses.</p></div>
+<div class="card"><div class="icon">🍅</div><h3>Tomato</h3><p>Fresh tomatoes for daily supply.</p></div>
+<div class="card"><div class="icon">🥔</div><h3>Potato</h3><p>Quality potatoes for wholesale buyers.</p></div>
+<div class="card"><div class="icon">🌶️</div><h3>Green Chilli</h3><p>Fresh green chilli.</p></div>
+</div></div></section>
+
+<section id="why"><div class="container"><div class="heading"><h2>Why Choose Tamil Traders?</h2><p>Quality, freshness and dependable wholesale service.</p></div>
+<div class="grid">
+<div class="card"><h3>Farm Fresh</h3><p>Fresh produce sourced through trusted procurement.</p></div>
+<div class="card"><h3>Premium Quality</h3><p>Carefully selected products for business needs.</p></div>
+<div class="card"><h3>Wholesale Pricing</h3><p>Competitive pricing for regular buyers.</p></div>
+<div class="card"><h3>Daily Fresh Stock</h3><p>Reliable supply of fresh produce.</p></div>
+<div class="card"><h3>Bulk Orders</h3><p>Large-volume orders handled efficiently.</p></div>
+<div class="card"><h3>Timely Service</h3><p>Dependable coordination and delivery.</p></div>
+</div></div></section>
+
+<section class="stats"><div class="container stats-grid">
+<div class="stat"><strong>100+</strong><span>Product Varieties</span></div><div class="stat"><strong>Daily</strong><span>Fresh Stock</span></div><div class="stat"><strong>Bulk</strong><span>Order Supply</span></div><div class="stat"><strong>100%</strong><span>Quality Focus</span></div>
+</div></section>
+
+<section id="industries"><div class="container"><div class="heading"><h2>Industries We Serve</h2><p>Fresh produce solutions for business customers.</p></div>
+<div class="industries"><div class="industry">Hotels</div><div class="industry">Restaurants</div><div class="industry">Catering Services</div><div class="industry">Corporate Canteens</div><div class="industry">Supermarkets</div><div class="industry">Retail Shops</div><div class="industry">Hostels</div><div class="industry">Hospitals</div><div class="industry">Schools & Colleges</div><div class="industry">Food Processing Units</div><div class="industry">Wholesale Dealers</div><div class="industry">Corporate Kitchens</div></div></div></section>
+
+<section class="white" id="contact"><div class="container"><div class="heading"><h2>Contact Tamil Traders</h2><p>Tell us your wholesale supply requirement.</p></div>
+<div class="contact"><div class="box"><h3>Business Information</h3><p><strong>Business:</strong> Tamil Traders</p><p><strong>Location:</strong> Maduravoyal, Chennai, Tamil Nadu</p><p><strong>Business Hours:</strong> Monday – Sunday</p><p><strong>Phone:</strong> +91 63697 87005</p><p><strong>Email:</strong> tamiltraderschennai@gmail.com
+</p></div>
+<div class="box"><h3>Send an Enquiry</h3><form onsubmit="event.preventDefault();alert('Thank you! Your enquiry has been received.');this.reset()"><input placeholder="Your Name" required><input type="tel" placeholder="Phone Number" required><input type="email" placeholder="Email Address"><select required><option value="">Select Requirement</option><option>Green Leaf Wholesale</option><option>Vegetable Wholesale</option><option>Bulk Order</option><option>Corporate Supply</option></select><textarea placeholder="Tell us your requirement"></textarea><button class="submit">Submit Enquiry</button></form></div></div></div></section>
+</main>
+
+<a class="float wa" href="https://wa.me/6369787005" aria-label="WhatsApp">☘</a>
+<a class="float call" href="tel:+6369787005" aria-label="Call">☎</a>
+<img class="footer-logo" src="logo.webp" alt="Tamil Traders Logo">
+<footer><div class="container"><div class="footer-grid">
+<div><img class="footer-logo" src="images/logo.webp" alt="Tamil Traders Logo"><p>Fresh green leaves and vegetables supplied to businesses with a focus on quality, freshness and dependable wholesale service.</p></div>
+<div><h3>Quick Links</h3><a href="#home">Home</a><a href="#about">About</a><a href="#products">Products</a><a href="#contact">Contact</a></div>
+<div><h3>Products</h3><a href="#products">Green Leaves</a><a href="#products">Fresh Vegetables</a><a href="#products">Bulk Orders</a></div>
+<div><h3>Location</h3><p>Maduravoyal,<br>Chennai, Tamil Nadu,<br>India</p></div>
+</div><div class="bottom">© 2026 Tamil Traders. All Rights Reserved.</div></div></footer>
+<footer>
+    ...
+</footer>
+
+<script>
+window.addEventListener("load", function () {
+
+    const logo = document.getElementById("tamilLogo");
+
+    if (!logo) return;
+
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+
+    const image = new Image();
+
+    image.onload = function () {
+
+        canvas.width = image.naturalWidth;
+        canvas.height = image.naturalHeight;
+
+        ctx.drawImage(image, 0, 0);
+
+        const imageData = ctx.getImageData(
+            0,
+            0,
+            canvas.width,
+            canvas.height
+        );
+
+        const pixels = imageData.data;
+
+        for (let i = 0; i < pixels.length; i += 4) {
+
+            const r = pixels[i];
+            const g = pixels[i + 1];
+            const b = pixels[i + 2];
+
+            // Remove white and near-white background
+            if (r > 235 && g > 235 && b > 235) {
+                pixels[i + 3] = 0;
+            }
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+
+        // Replace original image with transparent PNG
+        logo.src = canvas.toDataURL("image/png");
+    };
+
+    image.src = logo.src;
+});
+</script>
+</body>
+</html>
