@@ -170,7 +170,32 @@ footer{background:#F2F2F2;border-top:4px solid var(--gold);padding:50px 0 20px}.
 <section class="white" id="contact"><div class="container"><div class="heading"><h2>Contact Tamil Traders</h2><p>Tell us your wholesale supply requirement.</p></div>
 <div class="contact"><div class="box"><h3>Business Information</h3><p><strong>Business:</strong> Tamil Traders</p><p><strong>Location:</strong> Maduravoyal, Chennai, Tamil Nadu</p><p><strong>Business Hours:</strong> Monday – Sunday</p><p><strong>Phone:</strong> +91 63697 87005</p><p><strong>Email:</strong> tamiltraderschennai@gmail.com
 </p></div>
-<div class="box"><h3>Send an Enquiry</h3><form onsubmit="event.preventDefault();alert('Thank you! Your enquiry has been received.');this.reset()"><input placeholder="Your Name" required><input type="tel" placeholder="Phone Number" required><input type="email" placeholder="Email Address"><select required><option value="">Select Requirement</option><option>Green Leaf Wholesale</option><option>Vegetable Wholesale</option><option>Bulk Order</option><option>Corporate Supply</option></select><textarea placeholder="Tell us your requirement"></textarea><button class="submit">Submit Enquiry</button></form></div></div></div></section>
+<div class="box"><h3>Send an Enquiry</h3><form id="enquiryForm">
+
+    <input type="text" id="formName" placeholder="Your Name" required>
+
+    <input type="tel" id="formPhone" placeholder="Phone Number" required>
+
+    <input type="email" id="formEmail" placeholder="Email Address">
+
+    <select id="formRequirement" required>
+        <option value="">Select Requirement</option>
+        <option value="Green Leaf Wholesale">Green Leaf Wholesale</option>
+        <option value="Vegetable Wholesale">Vegetable Wholesale</option>
+        <option value="Bulk Order">Bulk Order</option>
+        <option value="Corporate Supply">Corporate Supply</option>
+    </select>
+
+    <textarea id="formMessage" placeholder="Tell us your requirement"></textarea>
+
+    <button type="submit" class="submit" id="submitBtn">
+        Submit Enquiry
+    </button>
+    </form>
+    </div>
+</div>
+</div>
+</section>
 </main>
 
 <a class="float wa" href="https://wa.me/6369787005" aria-label="WhatsApp">☘</a>
@@ -235,5 +260,6 @@ window.addEventListener("load", function () {
     image.src = logo.src;
 });
 </script>
+<script src="script.js"></script>
 </body>
 </html>

@@ -311,141 +311,133 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       CONTACT FORM VALIDATION
-       ===================================================== */
+   TAMIL TRADERS ENQUIRY FORM
+   GOOGLE SHEETS + WHATSAPP
+   ===================================================== */
 
-    const contactForm =
-        document.querySelector("form");
+const GOOGLE_SHEET_WEB_APP_URL =
+    "https://script.google.com/macros/s/AKfycbxXNGbxrxcCcbmVAx6HhuPjxZdBLbK_EDyRjP5zdYOe276InoihmI_y26ZF2KXCw0m7/exec";
 
-    if (contactForm) {
+const WHATSAPP_NUMBER = "916369787005";
 
-        contactForm.addEventListener(
-            "submit",
-            function (event) {
+const contactForm = document.getElementById("enquiryForm");
 
-                event.preventDefault();
+if (contactForm) {
 
-                const name =
-                    contactForm.querySelector(
-                        'input[placeholder="Your Name"]'
-                    );
+    contactForm.addEventListener("submit", function (event) {
 
-                const phone =
-                    contactForm.querySelector(
-                        'input[type="tel"]'
-                    );
+        event.preventDefault();
 
-                const email =
-                    contactForm.querySelector(
-                        'input[type="email"]'
-                    );
+        const nameInput = document.getElementById("formName");
+        const phoneInput = document.getElementById("formPhone");
+        const emailInput = document.getElementById("formEmail");
+        const requirementInput = document.getElementById("formRequirement");
+        const messageInput = document.getElementById("formMessage");
+        const submitBtn = document.getElementById("submitBtn");
 
-                const requirement =
-                    contactForm.querySelector("select");
+        const name = nameInput.value.trim();
+        const phone = phoneInput.value.trim();
+        const email = emailInput.value.trim();
+        const requirement = requirementInput.value;
+        const message = messageInput.value.trim();
 
-                const message =
-                    contactForm.querySelector("textarea");
+        /* Required field validation */
+        if (!name || !phone || !requirement) {
 
+            alert("Please fill in all required fields.");
+            return;
 
-                /* Required fields */
+        }
 
-                if (
-                    !name ||
-                    !phone ||
-                    !requirement
-                ) {
+        /* Phone validation */
+        const cleanPhone = phone.replace(/\D/g, "");
 
-                    alert(
-                        "Please complete the required fields."
-                    );
+        if (cleanPhone.length < 10) {
 
-                    return;
+            alert("Please enter a valid phone number.");
+            phoneInput.focus();
+            return;
 
-                }
+        }
 
+        /* Disable submit button */
+        submitBtn.disabled = true;
+        submitBtn.innerText = "Submitting...";
 
-                if (
-                    name.value.trim() === "" ||
-                    phone.value.trim() === "" ||
-                    requirement.value === ""
-                ) {
+        const formData = {
 
-                    alert(
-                        "Please fill in all required fields."
-                    );
+            name: name,
+            phone: phone,
+            email: email,
+            requirement: requirement,
+            message: message
 
-                    return;
+        };
 
-                }
+        /* Send enquiry to Google Sheets */
+        fetch(GOOGLE_SHEET_WEB_APP_URL, {
 
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8"
+            },
+            body: JSON.stringify(formData)
 
-                /* Phone validation */
+        })
 
-                const phoneNumber =
-                    phone.value.replace(/\D/g, "");
+        .then(function () {
 
-                if (phoneNumber.length < 10) {
+            /* WhatsApp message */
+            const whatsappMessage =
+                "*New Tamil Traders Enquiry*\n\n" +
+                "*Name:* " + name + "\n" +
+                "*Phone:* " + phone + "\n" +
+                "*Email:* " + (email || "N/A") + "\n" +
+                "*Requirement:* " + requirement + "\n" +
+                "*Message:* " + (message || "N/A");
 
-                    alert(
-                        "Please enter a valid phone number."
-                    );
+            const whatsappURL =
+                "https://wa.me/" +
+                WHATSAPP_NUMBER +
+                "?text=" +
+                encodeURIComponent(whatsappMessage);
 
-                    phone.focus();
+            alert(
+                "Thank you, " +
+                name +
+                "!\n\nYour enquiry has been submitted successfully."
+            );
 
-                    return;
+            /* Open WhatsApp */
+            window.open(whatsappURL, "_blank");
 
-                }
+            /* Reset form */
+            contactForm.reset();
 
+            /* Restore button */
+            submitBtn.disabled = false;
+            submitBtn.innerText = "Submit Enquiry";
 
-                /* Email validation if entered */
+        })
 
-                if (email && email.value.trim() !== "") {
+        .catch(function (error) {
 
-                    const emailPattern =
-                        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            console.error("Enquiry submission error:", error);
 
-                    if (
-                        !emailPattern.test(
-                            email.value.trim()
-                        )
-                    ) {
+            alert(
+                "Unable to submit your enquiry.\n\n" +
+                "Please try again."
+            );
 
-                        alert(
-                            "Please enter a valid email address."
-                        );
+            submitBtn.disabled = false;
+            submitBtn.innerText = "Submit Enquiry";
 
-                        email.focus();
+        });
 
-                        return;
+    });
 
-                    }
-
-                }
-
-
-                /*
-                   IMPORTANT:
-
-                   This currently displays a success message.
-
-                   To actually send the enquiry to
-                   Google Sheets / email / WhatsApp,
-                   connect this form to your backend later.
-                */
-
-                alert(
-                    "Thank you, " +
-                    name.value.trim() +
-                    "!\n\n" +
-                    "Your enquiry has been received."
-                );
-
-                contactForm.reset();
-
-            }
-        );
-
-    }
+}
 
 
     /* =====================================================
